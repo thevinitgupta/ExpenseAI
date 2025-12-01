@@ -67,36 +67,8 @@ const LandingPage = () => {
               </li>
             </ol>
           </div>
-  
-          {/* Benefits */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-semibold mb-3 text-gray-800">Why use this?</h2>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start">
-                <span className="mr-2">🎤</span>
-                <span><strong>Voice Input:</strong> No typing required</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">🤖</span>
-                <span><strong>AI-Powered:</strong> Automatically categorizes expenses</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">🔒</span>
-                <span><strong>Privacy First:</strong> Data stays on your device</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">📊</span>
-                <span><strong>Visual Analytics:</strong> Beautiful charts and insights</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">📥</span>
-                <span><strong>Export Ready:</strong> Download as CSV or JSON</span>
-              </li>
-            </ul>
-          </div>
-  
           {/* Action Buttons */}
-          <div className="space-y-3">
+          <div className="space-y-3 mb-4">
             <button
               onClick={handleGoogleSignIn}
               disabled={status === 'loading'}
@@ -139,6 +111,35 @@ const LandingPage = () => {
               How to Generate Gemini API Key
             </Link>
           </div>
+  
+          {/* Benefits */}
+          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 className="text-xl font-semibold mb-3 text-gray-800">Why use this?</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start">
+                <span className="mr-2">🎤</span>
+                <span><strong>Voice Input:</strong> No typing required</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">🤖</span>
+                <span><strong>AI-Powered:</strong> Automatically categorizes expenses</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">🔒</span>
+                <span><strong>Privacy First:</strong> Data stays on your device</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">📊</span>
+                <span><strong>Visual Analytics:</strong> Beautiful charts and insights</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">📥</span>
+                <span><strong>Export Ready:</strong> Download as CSV or JSON</span>
+              </li>
+            </ul>
+          </div>
+  
+          
   
           {/* Footer Info */}
           <div className="mt-8 text-center text-sm text-gray-600">
