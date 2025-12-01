@@ -5,6 +5,7 @@ export interface Expense {
     spentOn: string;
     spentThrough: string;
     selfOrOthersIncluded: string;
+    paidTo?: string;
     description: string;
     createdAt: string;
   }
@@ -19,7 +20,7 @@ export interface Expense {
   }
   
   export function exportToCSV(expenses: Expense[]): string {
-    const headers = ['Date', 'Amount', 'Category', 'Payment Method', 'For', 'Description', 'Created At'];
+    const headers = ['Date', 'Amount', 'Category', 'Payment Method', 'For', 'Paid To' , 'Description', 'Created At'];
     const rows = expenses.map(e => [
       e.dateSpent,
       e.amountSpent.toString(),
@@ -27,6 +28,7 @@ export interface Expense {
       e.spentThrough,
       e.selfOrOthersIncluded,
       `"${e.description.replace(/"/g, '""')}"`,
+      e.paidTo ? `"${e.paidTo.replace(/"/g, '""')}"` : '',
       e.createdAt,
     ]);
   

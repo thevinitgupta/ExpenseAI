@@ -112,8 +112,9 @@ export function useExpenses(selectedYear: number, selectedMonth: number) {
     });
 
     // non-blocking DB call
-    fetch(`/api/expenses/${id}`, {
+    fetch(`/api/expenses`, {
       method: "DELETE",
+      body: JSON.stringify({ id }),
     }).catch(() => logWarn("DB delete failed"));
   };
 

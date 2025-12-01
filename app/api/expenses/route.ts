@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import type { NextRequest } from "next/server";
 import { type Expense } from "@/lib/storage";
-import { logError } from "@/lib/logger";
+import { logError, logInfo } from "@/lib/logger";
 
 /**
  * GET /api/expenses?year=YYYY&month=M
@@ -117,10 +117,12 @@ export async function DELETE(req: Request) {
     const db = client.db("expense_tracker");
     const coll = db.collection("expenses");
 
+    console.log("Attempting to delete expense", {id, email});
+
     const res = await coll.deleteOne({ _id: id, email });
 
     if (res.deletedCount === 0) {
-      return NextResponse.json({ error: "Not found or not authorized" }, { status: 404 });
+      return NextResponse.json({ error: "Not found or not authorized", email: email, id }, { status: 400 });
     }
 
     return NextResponse.json({ success: true });

@@ -4,6 +4,7 @@ export interface ExpenseData {
     spentOn: string;
     spentThrough: string;
     selfOrOthersIncluded: string;
+    paidTo?: string;
   }
   
   export async function parseExpenseWithGemini(
@@ -19,6 +20,7 @@ export interface ExpenseData {
   - spentOn (category: Food, Travel, Shopping, Bills, Entertainment, or Other)
   - spentThrough (Cash, UPI, or Card)
   - selfOrOthersIncluded (Self or Others)
+  - paidTo (optional, name of person or entity if mentioned, otherwise Others)
   
   Example response:
   {

@@ -184,6 +184,7 @@ export default function DashboardPage() {
         spentOn: parsed.spentOn,
         spentThrough: parsed.spentThrough,
         selfOrOthersIncluded: parsed.selfOrOthersIncluded,
+        paidTo : parsed.paidTo? parsed.paidTo : '',
         description: transcriptRef.current,
         createdAt: new Date().toISOString(),
       };
@@ -222,7 +223,9 @@ export default function DashboardPage() {
         <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between">
           <div>
             <h1 className="text-xl font-bold">Voice Expense Tracker</h1>
-            <p className="text-sm">{session.user?.name}</p>
+            <div className="flex flex-row gap-1 items-center text-sm">
+              <img className="w-6 h-6 rounded-full" src={session?.user?.image || ""} alt="Rounded avatar" />
+              <span>{session.user?.name}</span></div>
           </div>
           <button
             onClick={() => {
